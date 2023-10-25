@@ -1,0 +1,138 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+@font-face{
+    font-family: mooli;
+    src: url(../font/Mooli-Regular.ttf);
+}
+body{
+    width: 100%;
+    font-family: mooli;
+    background-color: #f8f9fa;
+}
+li{
+    list-style-type: none;
+}
+.menu{
+    &:hover>ul{
+        visibility: visible;
+        opacity: 1;
+    }
+    >ul{
+        top: 25px;right: -50%;
+        visibility: hidden;
+        opacity: 0;
+        transition: .4s;
+        >li{
+            background-color: #fff;
+            >a{
+                margin: 1px 10px;
+            }
+        }
+    }
+}
+.rotate{
+    transform: rotate(-90deg);
+}
+.butt{
+    background-color: #ff9d00;
+    color: #fff;
+    transition: .4s;
+    border: 1px solid #ff9d00;
+    border-radius: 30px;
+    &:hover{
+        color: #ff9d00;
+        background-color: #ffffff00;
+    }
+}
+.pointer{
+    cursor: pointer;
+}
+.slid1{
+    animation: slider1 6s infinite;
+    opacity: 0;
+}
+.slid2{
+    animation: slider2 6s infinite;
+    opacity: 0;
+}
+@keyframes slider1{
+    0%{opacity: 0;}
+    10%{opacity: 1;}
+    40%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 0;}
+}
+@keyframes slider2{
+    0%{opacity: 0;}
+    20%{opacity: 0;}
+    40%{opacity: 0;}
+    50%{opacity: 0;}
+    60%{opacity: 1;}
+    90%{opacity: 1;}
+    100%{opacity: 0;}
+}
+.image{
+    @media screen and (max-width:768px) {
+        width: 100%;
+        transform: translateX(0%);
+    }
+    @media screen and (min-width:768px) {
+        width: 200%;
+        transform: translateX(-30%);
+    }
+    @media screen and (min-width:992px) {
+        width: 200%;
+        transform: translateX(-30%);
+    }
+}
+
+.hover{
+    position: relative;
+    transition: .4s;
+    &::after{
+        content: 'buy now';
+        position: absolute;
+        width: 100%;
+        height: 86%;
+        display: flex;
+        top: 0;left: 0;
+        background-color: #ffa6003b;
+        color: rgb(255, 250, 250);
+        text-shadow: 1px 1px 10px solid black;
+        padding: 20px;
+        align-items: end;
+        justify-content: center;
+        text-transform: capitalize;
+        cursor: pointer;
+        font-size: 30px;
+        opacity: 0;
+        transition: .4s;
+    }
+    &:hover::after{
+        opacity: 1;
+    }
+    &:hover>img{
+        transform: scale(1.1) translateY(-4%);
+    }
+    >img{
+        transition: .4s;
+    }
+}
+.bgimg{
+    background-image: url(../img/bg_4.jpg);
+    background-size: cover;
+    background-position: 0 -100px;
+    @media screen and (max-width:768px) {
+        background-size: 200%;
+    }
+    @media screen and (min-width:768px) {
+        width: 100%;
+    }
+}
+.br1{
+    border-radius: 50%;
+}
+.zind{
+    z-index: 99;
+}
